@@ -1,6 +1,7 @@
 package com.example.cpringclient;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText Branch;
     TextInputEditText Location;
 
+    Button ButtonSave;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         Name = findViewById(R.id.Name);
         Branch = findViewById(R.id.Branch);
         Location = findViewById(R.id.location);
+        ButtonSave= findViewById(R.id.submit);
 
+     ButtonSave.setOnClickListener(view -> {
+         String name = Name.getText().toString();
+         String branch = Branch.getText().toString();
+         String location = Location.getText().toString();
+
+     });
     }
 }
