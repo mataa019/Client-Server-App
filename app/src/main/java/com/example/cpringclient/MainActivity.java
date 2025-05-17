@@ -2,6 +2,7 @@ package com.example.cpringclient;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,9 @@ import com.example.cpringclient.retrofitservice.EmployeeApi;
 import com.example.cpringclient.retrofitservice.RetrofitService;
 import com.google.android.material.textfield.TextInputEditText;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,7 +53,18 @@ public class MainActivity extends AppCompatActivity {
          employeeModel.setBranch(branch);
          employeeModel.setLocation(location);
 
-         employeeApi.SaveEmployee(employeeModel);
+         employeeApi.SaveEmployee(employeeModel)
+                 .enqueue(new Callback<EmployeeModel>() {
+                     @Override
+                     public void onResponse(Call<EmployeeModel> call, Response<EmployeeModel> response) {
+                         Toast.makeText(MainActivity.this, "Save Successfull", Toast.LENGTH_SHORT).show();
+                     }
+
+                     @Override
+                     public void onFailure(Call<EmployeeModel> call, Throwable t) {
+                        Toast.makeText(MainActivity.this, "Save Failed", Toast.LENGTH_SHORT).show();
+                     }
+                 });
      });
     }
 }
