@@ -9,10 +9,10 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputName"
+        android:id="@+id/Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/app_name"
+        android:hint="@string/form_name"
         android:shadowRadius="@integer/material_motion_duration_long_1"
         />
 
@@ -20,8 +20,14 @@
         android:id="@+id/Branch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/app_name"
+        android:hint="@string/form_branch"
         android:shadowRadius="@integer/material_motion_duration_long_1"
         />
-
+    <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/location"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/form_location"
+    android:shadowRadius="@integer/material_motion_duration_long_1"
+    />
 </RelativeLayout>
