@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Name = findViewById()
+      Components();
     }
     private void Components(){
         TextName = findViewById(R.id.Name);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                      @Override
                      public void onFailure(Call<EmployeeModel> call, Throwable t) {
                         Toast.makeText(MainActivity.this, "Save Failed", Toast.LENGTH_SHORT).show();
-                         Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, "Error Occured", t);
+                         Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, "Error ", t);
                      }
                  });
      });
