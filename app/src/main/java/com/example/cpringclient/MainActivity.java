@@ -9,6 +9,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.cpringclient.model.EmployeeModel;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
          String branch = String.valueOf(Branch.getText());
          String location = String.valueOf(Location.getText());
 
+         EmployeeModel employeeModel = new EmployeeModel();
+         employeeModel.setName(name);
+         employeeModel.setBranch(branch);
+         employeeModel.setLocation(location);
      });
     }
 }
