@@ -13,7 +13,6 @@ import com.google.android.material.textfield.TextInputEditText;
 public class MainActivity extends AppCompatActivity {
     TextInputEditText Name;
     TextInputEditText Branch;
-
     TextInputEditText Location;
 
 
