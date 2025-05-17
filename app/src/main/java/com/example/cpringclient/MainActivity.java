@@ -23,4 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Name = findViewById()
     }
+    private void Components(){
+        Name = findViewById(R.id.Name);
+        Branch = findViewById(R.id.Branch);
+        Location = findViewById(R.id.location);
+
+    }
 }
