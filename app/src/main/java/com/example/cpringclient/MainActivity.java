@@ -24,9 +24,9 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
-    TextInputEditText Name;
-    TextInputEditText Branch;
-    TextInputEditText Location;
+    TextInputEditText TextName;
+    TextInputEditText TextBranch;
+    TextInputEditText TextLocation;
 
     Button ButtonSave;
 
@@ -39,17 +39,17 @@ public class MainActivity extends AppCompatActivity {
         //Name = findViewById()
     }
     private void Components(){
-        Name = findViewById(R.id.Name);
-        Branch = findViewById(R.id.Branch);
-        Location = findViewById(R.id.location);
+        TextName = findViewById(R.id.Name);
+        TextBranch = findViewById(R.id.Branch);
+        TextLocation = findViewById(R.id.location);
         ButtonSave= findViewById(R.id.submit);
         RetrofitService retrofitService = new RetrofitService();
         EmployeeApi employeeApi = retrofitService.getRetrofit().create(EmployeeApi.class);
 
         ButtonSave.setOnClickListener(view -> {
-         String name = String.valueOf(Name.getText());
-         String branch = String.valueOf(Branch.getText());
-         String location = String.valueOf(Location.getText());
+         String name = String.valueOf(TextName.getText());
+         String branch = String.valueOf(TextBranch.getText());
+         String location = String.valueOf(TextLocation.getText());
 
          EmployeeModel employeeModel = new EmployeeModel();
          employeeModel.setName(name);
