@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
         ButtonSave= findViewById(R.id.submit);
 
      ButtonSave.setOnClickListener(view -> {
-         String name = Name.getText().toString();
-         String branch = Branch.getText().toString();
-         String location = Location.getText().toString();
+         String name = String.valueOf(Name.getText());
+         String branch = String.valueOf(Branch.getText());
+         String location = String.valueOf(Location.getText());
 
      });
     }
