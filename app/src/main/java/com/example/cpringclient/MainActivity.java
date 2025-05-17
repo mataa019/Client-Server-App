@@ -10,7 +10,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.cpringclient.model.EmployeeModel;
+import com.example.cpringclient.retrofitservice.EmployeeApi;
+import com.example.cpringclient.retrofitservice.RetrofitService;
 import com.google.android.material.textfield.TextInputEditText;
+
+import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity {
     TextInputEditText Name;
@@ -32,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
         Branch = findViewById(R.id.Branch);
         Location = findViewById(R.id.location);
         ButtonSave= findViewById(R.id.submit);
+        RetrofitService retrofitService = new RetrofitService();
+        EmployeeApi employeeApi = retrofitService.getRetrofit().create(EmployeeApi.class);
 
-     ButtonSave.setOnClickListener(view -> {
+        ButtonSave.setOnClickListener(view -> {
          String name = String.valueOf(Name.getText());
          String branch = String.valueOf(Branch.getText());
          String location = String.valueOf(Location.getText());
