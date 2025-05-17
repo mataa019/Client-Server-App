@@ -15,6 +15,9 @@ import com.example.cpringclient.retrofitservice.EmployeeApi;
 import com.example.cpringclient.retrofitservice.RetrofitService;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -63,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                      @Override
                      public void onFailure(Call<EmployeeModel> call, Throwable t) {
                         Toast.makeText(MainActivity.this, "Save Failed", Toast.LENGTH_SHORT).show();
+                         Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, "Error Occured", t);
                      }
                  });
      });
