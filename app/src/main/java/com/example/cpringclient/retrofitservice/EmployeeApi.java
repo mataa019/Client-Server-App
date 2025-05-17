@@ -1,13 +1,14 @@
 package com.example.cpringclient.retrofitservice;
 
-import java.util.List;
-
+import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 
-public class EmployeeApi {
-    @GET("/employee/get-all")
-    Call<List<Employee>> getAllEmployee();
+public interface EmployeeApi {
+    @GET("/employee/get-all");
+    Call<List<Employee>>GetAllEmployee();
 
-    @GET("/employee/save")
-    Call<List<Employee>> SaveEmployee();
+    @POST("/employee/save");
+    Call<Employee> SaveEmployee(@Body Employee employee);
 }
