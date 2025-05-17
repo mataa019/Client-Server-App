@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
          employeeModel.setName(name);
          employeeModel.setBranch(branch);
          employeeModel.setLocation(location);
+
+         employeeApi.SaveEmployee(employeeModel);
      });
     }
 }
